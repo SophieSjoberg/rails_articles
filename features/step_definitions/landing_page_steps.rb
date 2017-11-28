@@ -1,5 +1,5 @@
 When("I am on the landing page") do
-  visit '/'
+  visit root_path
 end
 
 Given("the following articles exists") do |table|
