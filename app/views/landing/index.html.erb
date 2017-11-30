@@ -1,0 +1,11 @@
+<%= link_to 'new article', 'articles/new'  %>
+
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= article.title %><br />
+      <%= article.content %><br />
+    </li>
+  <% end %>
+</ul>
