@@ -21,4 +21,8 @@ Feature: Create articles
     And I click "Create Article" button
     Then I should see "Title can't be blank"
 
-  # Write another sad path scenario you can think of
+
+  Scenario: Blogger doesn't enter content for the article
+    When I fill in "Title" with "Learning Rails 5"
+    And I click "Create Article" button
+    Then I should see "Content can't be blank"
