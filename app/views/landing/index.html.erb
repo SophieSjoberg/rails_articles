@@ -6,6 +6,7 @@
     <li>
       <%= article.title %><br />
       <%= article.content %><br />
+      <%= link_to 'Comment', article_path(article)%>
     </li>
   <% end %>
 </ul>
