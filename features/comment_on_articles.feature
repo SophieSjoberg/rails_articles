@@ -8,9 +8,13 @@ Feature: Comment on article
       | title            | content                                |
       | Learning Rails 5 | Excited about learning a new framework |
 
-  Scenario: Visitor comments on article
-    Given I visit the landing page
-    And I click "Comment"
-    And I fill in "Comment" with "Text"
-    And I click "Submit Comment" button
-    Then I should see "Text"
+    Scenario: Successfully comment on an article
+        Given I visit the landing page
+        And I click "Learning Rails 5" link
+        When I fill in "Email" with "sophie@random.com"
+        And I fill in "Comment" with "Great article!"
+        And I click "Create comment" button
+        Then I should be on "Learning Rails 5" page
+        And I should see "Your comment was added successfully!"
+        And I should see "Great article!"
+        And I should see "Commented by: sophie@random.com"

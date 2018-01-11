@@ -1,7 +1,17 @@
-<!-- <h1>Articles#create</h1>
- <p>Find me in app/views/articles/create.html.erb</p> -->
+<h2><%= @article.title %></h2>
+<p><%= @article.content %></p>
 
-  <h4><%= @article.title %></h4>
-  <p><%= @article.content %></p>
+<%= form_with url: article_comments_path(@article) do |form| %>
+  <%= form.label :email %>
+  <%=form.text_field :email %>
+  <%=form.label :comment %>
+  <%=form.text_field :comment %>
+  <%= form.submit 'Create comment' %>
+<% end %>
 
-  
+<% if @article.comments.any? %>
+  <% @article.comments.each do |comment| %>
+  <p><%= comment.body %></p>
+  <p><%= "Comment by: #{comment.email}"%></p>
+  <% end %>
+<% end %>
