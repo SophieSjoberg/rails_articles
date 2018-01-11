@@ -9,8 +9,8 @@
   </head>
 
   <body>
-    <% if flash[:notice] %>
-      <%= flash[:notice] %>
+    <% flash.each do |key, value| %>
+      <%= flash %>
     <% end %>
     <%= yield %>
   </body>

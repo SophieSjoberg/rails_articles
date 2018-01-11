@@ -2,7 +2,7 @@
 <p><%= @article.content %></p>
 
 
-<%= form_with url: article_comment_path(@article) do |form| %>
+<%= form_with url: article_comments_path(@article) do |form| %>
   <%= form.label :email %>
   <%=form.text_field :email %>
   <%=form.label :comment %>

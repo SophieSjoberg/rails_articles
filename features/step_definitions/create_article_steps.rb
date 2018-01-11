@@ -7,7 +7,7 @@ When("I click {string} link") do |link|
 end
 
 When("I fill in {string} with {string}") do |field_name, content|
-fill_in field_name, with: content
+fill_in field_name.downcase, with: content
 end
 
 When("I click {string} button") do |button|

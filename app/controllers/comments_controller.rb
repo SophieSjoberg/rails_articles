@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     Comment.create(email: params[:email],
                     content: params[:comment],
                     article: article)
-    flash[:success] = 'Your comment was added successfully'
+    flash[:success] = "Your comment was added successfully!"
     redirect_to article_path(article)
   end
 end
