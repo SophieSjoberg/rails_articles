@@ -10,12 +10,13 @@ Feature: Comment on article
       | Learning Rails 5 | Excited about learning a new framework |
       | My day so far    | There's no more room in my head        |
 
-      Given I am on the landing page
+    Given I am on the landing page
 
     Scenario: Successfully comment on an article
-        And I click on "Learning Rails 5"
-        When I fill in "Email" with "sophie@random.com"
+        When I click "Learning Rails 5"
+        And I fill in "Email" with "sophie@random.com"
         And I fill in "Comment" with "Great article!"
         And I click "Create comment"
         Then I should be on "Learning Rails 5" article page
+        Then show me the page
         And I should see "Your comment was added successfully!"
